@@ -1,5 +1,5 @@
-﻿# Removes duplicate bookmarks fgrom and exported bookmarks html from google chrome
-# Does not touch folders, yet, **WIP**
+# Removes duplicate bookmarks from an exported bookmarks html from google chrome
+# Also removes empty folders afterwards
 # Author: David "AdenFlorian" Valachovic - 2014 - AdenFlorian@gmail.com
 
 # Settings
@@ -51,9 +51,9 @@ if ($removeEmptyFolders) {
     $removedFolder = $true
 
     # Keep doing until no more empty folders
-    # Have to do this muitple times because of null lines in $file array
+    # Have to do this multiple times because of null lines in $file array
     # Need to write to disk then reload file
-    # Would be better if could find a way to remove elements from array, and have remaining elements shift left
+    # Would be better if I could find a way to remove elements from array, and have remaining elements shift left
     while ($removedFolder) {
         $removedFolder = $false
         for ($i = 0; $i -lt $totalLines; $i++) {
